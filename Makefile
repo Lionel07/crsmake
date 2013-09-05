@@ -1,4 +1,4 @@
-COMPILING_FILES := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
+COMPILING_FILES := $(wildcard *.cpp)
 
 all: build run
   
