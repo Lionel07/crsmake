@@ -25,6 +25,8 @@ int main()
 		{
 			getline (rulefile,line);
 			printf("[\t%d]:%s\n",lineno,line.c_str());
+			tokenizer.convert_to_token(line);
+
 			lineno++;
 		}
 		rulefile.close();

@@ -1,5 +1,6 @@
 #include "includes/token.h"
 #include "includes/tokenizer.h"
+#include <iostream>
 #include <vector>
 #include <string>
 #include <stdio.h>
@@ -24,15 +25,23 @@ vector<string> split(const char *str, char c = ' ')
 
 Token Tokenizer::convert_to_token(string line)
 {
+	int token_pos;
 	Token result;
 	vector<string> tokens;
-	tokens = split(line,',')
+	tokens = split(line.c_str(),',');
 	for (vector<string>::iterator n = tokens.begin();
                               n != tokens.end();
                               ++n)
 	{
-	    printf("Token:%s\n",*n);
+		if(token_pos==0)
+		{
+			cout << "Rule:" << *n << endl;
+			result.rule = *n;
+		}
+		else if(token_pos==1)
+		{
+		}
+		token_pos++;
 	}
-	
 	return result;
 }

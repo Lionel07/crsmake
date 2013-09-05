@@ -1,7 +1,7 @@
-global, set compiler c,clang
-global, set compiler c++,clang
-global, set cflags, -O2 -g -Wall -Wextra -Werror
-global, set make, make
-global, set make output, Makefile_crsmake
-global, set output,crsmake
-global, add compile,*.cpp
+global,set compiler c,clang
+global,set compiler c++,clang
+global,set cflags, -O2 -g -Wall -Wextra -Werror
+global,set make,make
+global,set make output,Makefile_crsmake
+global,set output,crsmake
+global,add compile,*.cpp

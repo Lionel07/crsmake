@@ -3,6 +3,7 @@
 #include <string>
 class Token
 {
+	public:
 	int id;
 	std::string rule;
 	std::string descriptor;
