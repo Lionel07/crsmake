@@ -11,5 +11,18 @@ On launch it looks for the crsmake.csv file. Yes; a human readable comma seperat
 The crsmake.csv file has lists of rules for it to follow. The syntax allows for enviroment and argument variables.
 Example:
 
-	if $(ARCH:x86),compile,kernel/x86/*.c
-	global, set compiler:c,clang 
+	rule, action(:params),data
+	
+	global, compile,*.cpp
+	global, set compiler:c,clang
+	global, set compiler:c++,clang
+	global, set make, make
+	global, set make output, Makefile
+	global, set output,crsmake
+	global, set executable,crsmake
+
+The syntax is:
+
+	rule, action(:params),data
+	
+It then, based on these rules generates a makefile. Then it calls make
