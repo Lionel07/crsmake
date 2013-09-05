@@ -25,7 +25,7 @@ vector<string> split(const char *str, char c = ' ')
 
 Token Tokenizer::convert_to_token(string line)
 {
-	int token_pos;
+	int token_pos=0;
 	Token result;
 	vector<string> tokens;
 	tokens = split(line.c_str(),',');
@@ -35,11 +35,18 @@ Token Tokenizer::convert_to_token(string line)
 	{
 		if(token_pos==0)
 		{
-			cout << "Rule:" << *n << endl;
+			cout << "rule:" << *n << endl;
 			result.rule = *n;
 		}
 		else if(token_pos==1)
 		{
+			cout << "descriptor:" << *n << endl;
+			result.descriptor = *n;
+		}
+		else if(token_pos==2)
+		{
+			cout << "action:" << *n << endl;
+			result.rule= *n;
 		}
 		token_pos++;
 	}
