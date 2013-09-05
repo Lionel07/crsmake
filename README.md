@@ -11,5 +11,5 @@ On launch it looks for the crsmake.csv file. Yes; a human readable comma seperat
 The crsmake.csv file has lists of rules for it to follow. The syntax allows for enviroment and argument variables.
 Example:
 
-	> if $(ARCH:x86),compile,kernel/x86/*.c
-	> global, set compiler:c,clang 
+	if $(ARCH:x86),compile,kernel/x86/*.c
+	global, set compiler:c,clang 
