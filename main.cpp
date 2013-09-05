@@ -6,6 +6,8 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
+#include "includes/token.h"
+#include "includes/tokenizer.h"
 using namespace std;
 
 //Variables
@@ -15,6 +17,7 @@ int main()
 {
 	printf("crsmake - v. 0.1\n");
 	ifstream rulefile("crsmake.csv");
+	Tokenizer tokenizer;
 	//Just echo for now.
 	if (rulefile.is_open())
 	{
