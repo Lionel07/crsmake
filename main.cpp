@@ -5,7 +5,7 @@
 //Includes
 #include <iostream>
 #include <fstream>
-#include <stdio>
+#include <stdio.h>
 using namespace std;
 
 //Variables
