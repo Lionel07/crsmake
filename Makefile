@@ -1,9 +1,7 @@
-COMPILING_FILES := $(wildcard *.cpp)
-
+COMPILING_FILES := main.cpp
 all: build run
   
 build:
-	cpp ${COMPILING_FILES} -o crsmake
+	clang++ main.cpp -o crsmake
 run:
-	chmod +x crsmake
 	./crsmake

@@ -9,22 +9,21 @@
 using namespace std;
 
 //Variables
-ifstream rulefile;
 string line;
 int lineno=0;
 int main()
 {
-	printf("crsmake - v. 0.1");
-	rulefile = new ifstream("crsmake.csv");
+	printf("crsmake - v. 0.1\n");
+	ifstream rulefile("crsmake.csv");
 	//Just echo for now.
 	if (rulefile.is_open())
 	{
 		while ( rulefile.good() )
 		{
 			getline (rulefile,line);
-			printf("[%d]\t:%s\n",lineno,line.c_str());
+			printf("[\t%d]:%s\n",lineno,line.c_str());
 			lineno++;
 		}
-		myfile.close();
+		rulefile.close();
 	}
 }
