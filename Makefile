@@ -1,7 +1,5 @@
 COMPILING_FILES := main.cpp
-all: build run
+all: build
   
 build:
 	clang++ main.cpp tokenizer.cpp -o crsmake
-run:
-	./crsmake

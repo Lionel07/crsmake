@@ -42,6 +42,7 @@ Token Tokenizer::convert_to_token(string line)
 		{
 			cout << "descriptor:" << *n << endl;
 			result.descriptor = *n;
+			//In addition; create paramaters later via nested loop with ALLOWEDARGS_TOKEN
 		}
 		else if(token_pos==2)
 		{

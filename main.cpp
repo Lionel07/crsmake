@@ -13,22 +13,34 @@ using namespace std;
 //Variables
 string line;
 int lineno=0;
-int main()
+int main(int argc, char **argv)
 {
-	printf("crsmake - v. 0.1\n");
-	ifstream rulefile("crsmake.csv");
-	Tokenizer tokenizer;
-	//Just echo for now.
-	if (rulefile.is_open())
+	int realargc=argc-1;
+	if(!realargc) //No Arguments
 	{
-		while ( rulefile.good() )
+		printf("usage: crsmake [rulefile]\n");
+	}
+	else
+	{
+		Token tokens[10];
+		ifstream rulefile(argv[1]);
+		Tokenizer tokenizer;
+		//Just echo for now.
+		if (rulefile.is_open())
 		{
-			getline (rulefile,line);
-			printf("[\t%d]:%s\n",lineno,line.c_str());
-			tokenizer.convert_to_token(line);
-
-			lineno++;
+			while ( rulefile.good() )
+			{
+				getline (rulefile,line);
+				tokens[lineno]=tokenizer.convert_to_token(line);
+				printf("\n");
+				lineno++;
+			}
+			rulefile.close();
 		}
-		rulefile.close();
+		else
+		{
+			printf("%s does not exist\n",argv[1]);
+			return 1;
+		}
 	}
 }
